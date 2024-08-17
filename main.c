@@ -69,10 +69,6 @@ int idx;
   float calculateZ(int i, int j, int k) {
     return j * sin(A) * cos(B) + k * cos(A) * cos(B) - i * sin(B);
   }
-
-#elif MODE == 2   // Espace orthographique
-
-
 #endif
 
 void calculateForSurface(float cubeX, float cubeY, float cubeZ, int ch) {
@@ -113,7 +109,7 @@ int main() {
         calculateForSurface(cubeX, cubeWidth, cubeY, '+');
       }
     }
-    /*cubeWidth = 10;
+    cubeWidth = 10;
     horizontalOffset = 1 * cubeWidth;
     // second cube
     for (float cubeX = -cubeWidth; cubeX < cubeWidth; cubeX += incrementSpeed) {
@@ -140,7 +136,7 @@ int main() {
         calculateForSurface(cubeX, -cubeWidth, -cubeY, ';');
         calculateForSurface(cubeX, cubeWidth, cubeY, '+');
       }
-    }*/
+    }
     printf("\033[H");
     for (int k = 0; k < width * height; k++) {
       putchar(k % width ? buffer[k] : 10);
